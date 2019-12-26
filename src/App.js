@@ -9,12 +9,12 @@ import { Auth } from "aws-amplify";
 function App(props) {
   const [isAuthenticated, userHasAuthenticated] = useState(false);
   const [isAuthenticating, setIsAuthenticating] = useState(true);
-  
+
   async function handleLogout() {
     await Auth.signOut();
-  
+
     userHasAuthenticated(false);
-  
+
     props.history.push("/login");
   }
 
@@ -48,7 +48,16 @@ function App(props) {
           <Navbar.Collapse>
             <Nav pullRight>
               {isAuthenticated ? (
-                <NavItem onClick={handleLogout}>Logout</NavItem>
+                <>
+                  <LinkContainer to="/billing">
+                    <NavItem>Billings</NavItem>
+                  </LinkContainer>
+                  <LinkContainer to="/settings">
+                    <NavItem>Settings</NavItem>
+                  </LinkContainer>
+
+                  <NavItem onClick={handleLogout}>Logout</NavItem>
+                </>
               ) : (
                 <>
                   <LinkContainer to="/signup">

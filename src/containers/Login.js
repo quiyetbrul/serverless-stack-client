@@ -4,6 +4,7 @@ import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
 import { useFormFields } from "../libs/hooksLib";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 export default function Login(props) {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +25,7 @@ export default function Login(props) {
     try {
       await Auth.signIn(fields.email, fields.password);
       props.userHasAuthenticated(true);
-      props.history.push("/");
+      // props.history.push("/");
     } catch (e) {
       alert(e.message);
       setIsLoading(false);
@@ -51,6 +52,7 @@ export default function Login(props) {
             onChange={handleFieldChange}
           />
         </FormGroup>
+        <Link to="/login/reset">Forgot password?</Link>
         <LoaderButton
           block
           type="submit"
