@@ -11,7 +11,7 @@ Should allow users to signup and login to their accounts
 \* Users can also delete their note
 \* The app should be able to process credit card payments
 \* The backend APIs need to be secure
-\* The app needs to be responsiveThe app is deployed on the AWS Platform at http://d1koxugtz4gc2e.cloudfront.net/signup
+\* The app needs to be responsiveThe app is deployed on the AWS Platform at http://d1koxugtz4gc2e.cloudfront.net/
 
 **TECHNOLOGY** SUMMARY
 
