@@ -37,9 +37,9 @@ export default function Signup(props) {
 
     setIsLoading(true);
 
-    setNewUser("test");
+    // setNewUser("test");
 
-    setIsLoading(false);
+    // setIsLoading(false);
 
     try {
         const newUser = await Auth.signUp({
