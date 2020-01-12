@@ -34,7 +34,7 @@ export default class ResetPassword extends Component {
   validateResetForm() {
     return (
       this.state.code.length > 0 &&
-      this.state.password.length > 0 &&
+      this.state.password.length > 5 &&
       this.state.password === this.state.confirmPassword
     );
   }

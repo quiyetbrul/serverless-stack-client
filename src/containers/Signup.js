@@ -23,7 +23,7 @@ export default function Signup(props) {
   function validateForm() {
     return (
       fields.email.length > 0 &&
-      fields.password.length > 0 &&
+      fields.password.length > 5 &&
       fields.password === fields.confirmPassword
     );
   }
@@ -37,9 +37,9 @@ export default function Signup(props) {
 
     setIsLoading(true);
 
-    setNewUser("test");
+    // setNewUser("test");
 
-    setIsLoading(false);
+    // setIsLoading(false);
 
     try {
         const newUser = await Auth.signUp({
